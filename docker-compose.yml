@@ -1,0 +1,18 @@
+version: '3'
+services:
+  db:
+    image: mongo:3.6
+    command: mongod --smallfiles --quiet
+    volumes:
+      - ./data/db:/data/db
+  web:
+    build: .
+    command: bash -c "rm -f ./pid && bundle exec puma -C config/puma.rb"
+    volumes:
+      - .:/myapp
+    environment:
+      RACK_ENV: staging
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db

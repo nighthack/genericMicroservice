@@ -1,0 +1,25 @@
+development:
+  clients:
+    default:
+      database: app_dev
+      hosts:
+        - localhost:27017
+
+# Set via docker
+staging:
+  clients:
+    default:
+      database: app_stage
+      hosts:
+        - db:27017
+      options:
+        server_selection_timeout: 1
+
+production:
+  clients:
+    default:
+      database: app_stage
+      hosts:
+        - localhost:27017
+      options:
+        server_selection_timeout: 1
