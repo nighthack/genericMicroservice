@@ -7,6 +7,11 @@ Microservice Layer for small apps built on Sinatra
   OR
   >- Docker
 
+> For Mac
+  >- Set bundler path to avoid conflicts
+  ```
+  bundle config set path 'vendor/bundle'
+  ```
 
 ### Run the Application
 
