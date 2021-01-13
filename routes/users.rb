@@ -11,8 +11,18 @@ get '/users/info' do
   return { user: user, phone: params[:phone] }.to_json
 end
 
-private
+post '/users' do
+  user = User.where(
+    phone: params[:phone],
+    name: params[:name],
+    profile: params[:profile],
+    balance: params[:balance]
+  ).first_or_create
+  return { user: user, phone: params[:phone] }.to_json
+end
 
+private
+  
   # response format for bots
   def build_response(message)
     return {
