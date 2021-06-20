@@ -2,7 +2,7 @@ set :user,            'ubuntu'
 set :puma_threads,    [1, 16]
 set :puma_workers,    2
 
-server 'loyaltybot.nighthack.in', user: 'ubuntu', roles: %w{app}
+server 'test-api.nighthack.in', user: 'ubuntu', roles: %w{app}
 
 set :deploy_via,      :remote_cache
 set :deploy_to,       "/home/#{fetch(:user)}/projects/#{fetch(:application)}"

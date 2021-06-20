@@ -2,8 +2,8 @@
 lock '3.3.5'
 
 set :scm, :git
-set :application, 'myApp'
-set :repo_url, 'git@github.com:nighthack/myApp.git'
+set :application, 'generic'
+set :repo_url, 'git@github.com:nighthack/genericMicroservice.git'
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp')
 
 set :bundle_without, (fetch(:bundle_without) << ' deployment')
