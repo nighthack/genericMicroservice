@@ -11,6 +11,11 @@ get '/users/info' do
   return { user: user, phone: params[:phone] }.to_json
 end
 
+get '/users/documents' do
+  user = User.where(phone: params[:phone]).first
+  return { user: user, documents: Document.where(user_id: user.id.to_s) }.to_json
+end
+
 post '/users' do
   user = User.where(
     phone: params[:phone],

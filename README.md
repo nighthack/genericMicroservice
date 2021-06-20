@@ -47,7 +47,8 @@ rerun rackup
 
 ### Docs
 
-[Postman Collection]()
+The capabilities of this Generic Micro-service are available here:
+[Postman Collection](https://www.getpostman.com/collections/fe407160fcee179f1135)
 
 
 CRUD on user resource as default, add your own lib

@@ -7,6 +7,7 @@ get '/documents' do
     documents: documents.map{|x| 
       {
         document_id: x.document_id,
+        user_id: x.user_id,
         details: x.details
       } 
     } 
@@ -14,7 +15,7 @@ get '/documents' do
 end
 
 get '/documents/:id' do
-  document = Document.find(params[:id])
+  document = Document.find_by(document_id: params[:id])
   return { document: document }.to_json
 end
 
@@ -24,6 +25,7 @@ post '/documents' do
   ).first_or_create
   document.update(
     text: params[:text],
+    user_id: params[:user_id],
     details: params[:details])
   return { document: document }.to_json
 end

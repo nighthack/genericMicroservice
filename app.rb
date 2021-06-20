@@ -11,3 +11,7 @@ require './routes/users'
 require './routes/documents'
 
 Mongoid.load!(File.join(File.dirname(__FILE__), 'config', 'mongoid.yml'))
+
+get '/' do
+  File.read(File.join('public', 'index.html'))
+end
